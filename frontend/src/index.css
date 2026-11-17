@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+  body {
+    @apply bg-sand font-sans text-brand-900 antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-gold-300 text-brand-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-brand-900 text-white shadow-[0_10px_30px_-12px_rgba(23,20,17,0.6)] hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-[0_18px_40px_-14px_rgba(23,20,17,0.55)];
+  }
+  .btn-gold {
+    @apply btn bg-gold-500 text-brand-900 shadow-[0_10px_30px_-12px_rgba(143,116,64,0.55)] hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-[0_18px_40px_-14px_rgba(143,116,64,0.5)];
+  }
+  .btn-outline {
+    @apply btn border border-brand-300 bg-white/50 text-brand-800 hover:-translate-y-0.5 hover:border-gold-500 hover:bg-white hover:text-brand-900 hover:shadow-soft;
+  }
+  .btn-light {
+    @apply btn border border-white/40 bg-white/10 text-white backdrop-blur hover:-translate-y-0.5 hover:bg-white hover:text-brand-900 hover:shadow-soft;
+  }
+  .field {
+    @apply w-full rounded-xl border border-brand-200 bg-white px-4 py-3 text-sm text-brand-900 outline-none transition-all duration-300 placeholder:text-brand-400 focus:border-gold-500 focus:ring-2 focus:ring-gold-100;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-500;
+  }
+  .card {
+    @apply rounded-2xl border border-brand-100 bg-white shadow-soft transition-all duration-300;
+  }
+  .section-wrap {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-luxe text-gold-700;
+  }
+  .page-hero {
+    @apply relative overflow-hidden bg-brand-900 text-white;
+  }
+  .page-hero::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(191,164,106,0.18),_transparent_60%)];
+  }
+}
